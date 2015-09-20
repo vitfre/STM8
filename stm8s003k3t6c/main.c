@@ -2,7 +2,7 @@
 
 int main( void )
 {
-  uint32_t Address_EEPROM=EEPROM_START+8;
+  uint32_t Address_EEPROM=EEPROM_START+4;
   uint32_t n0=0;
   uint32_t n1=0;
   uint32_t k0=0;
@@ -60,13 +60,7 @@ int main( void )
       ERR=1;
     }else
     {
-      if(n0==DATA_ONE)
-      {
-        n0=DATA_TVO;
-      }else
-      {
-        n0=DATA_ONE;
-      };
+      n0++;
       GPIO_WriteReverse(GPIOF, GPIO_PIN_4);
     };
     

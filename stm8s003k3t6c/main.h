@@ -12,9 +12,6 @@
 
 #define EEPROM_START    FLASH_DATA_START_PHYSICAL_ADDRESS                       //Начало EEPROM = 0x4000
 
-#define DATA_ONE    0x10101010
-#define DATA_TVO    0x01010101
-
 unsigned char HELLO[16]={0};
 unsigned char *byteNum = HELLO; // Указатель на передаваемый байт.
 
