@@ -17,7 +17,7 @@ int main( void )
   FLASH_EEPROM_Unlock();
   A_D_C_Init();
 
- //enableInterrupts(); //Разрешаем прерывания.
+ enableInterrupts(); //Разрешаем прерывания.
 
  while(1)
  {
