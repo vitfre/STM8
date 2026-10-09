@@ -1,0 +1,183 @@
+###############################################################################
+#
+# IAR C/C++ Compiler V2.10.3.153 for STM8                 06/Apr/2015  19:35:19
+# Copyright 2010-2015 IAR Systems AB.
+#
+#    Source file  =  D:\###WORK###\STM8\+++\lcd\src\stm8_interrupt_vector.c
+#    Command line =  
+#        D:\###WORK###\STM8\+++\lcd\src\stm8_interrupt_vector.c -e
+#        --enable_multibytes -Oh --debug --code_model small --data_model medium
+#        -o D:\###WORK###\STM8\+++\lcd\Debug\Obj\ --dlib_config "C:\Program
+#        Files (x86)\IAR Systems\Embedded Workbench 7.0\stm8\LIB\dlstm8smn.h"
+#        -lC D:\###WORK###\STM8\+++\lcd\Debug\List\ -I
+#        D:\###WORK###\STM8\+++\lcd\inc\ -I D:\###WORK###\STM8\+++\lcd\src\
+#        --vregs 16 --relaxed_fp
+#    List file    =  
+#        D:\###WORK###\STM8\+++\lcd\Debug\List\stm8_interrupt_vector.lst
+#    Object file  =  
+#        D:\###WORK###\STM8\+++\lcd\Debug\Obj\stm8_interrupt_vector.o
+#
+###############################################################################
+
+D:\###WORK###\STM8\+++\lcd\src\stm8_interrupt_vector.c
+      1          /*	BASIC INTERRUPT VECTOR TABLE FOR STM8 devices
+      2           *	Copyright (c) 2010 STMicroelectronics
+      3           */
+      4          
+      5          
+      6          #include "stm8l15x_it.h"
+      7          
+      8          typedef void @far (*interrupt_handler_t)(void);
+                              ^
+Warning[Pe375]: declaration requires a typedef name
+
+  typedef void @far (*interrupt_handler_t)(void);
+               ^
+"D:\###WORK###\STM8\+++\lcd\src\stm8_interrupt_vector.c",8  Error[Pe169]: 
+          expected a declaration
+      9          
+     10          struct interrupt_vector {
+     11          	uint8_t interrupt_instruction;
+     12          	interrupt_handler_t interrupt_handler;
+                 	^
+Error[Pe020]: identifier "interrupt_handler_t" is undefined
+     13          };
+     14          
+     15          struct interrupt_vector const _vectab[] = {
+     16            {0x82, (interrupt_handler_t)_stext},		/* Reset */
+                           ^
+Error[Pe020]: identifier "interrupt_handler_t" is undefined
+
+    {0x82, (interrupt_handler_t)_stext},		/* Reset */
+                                ^
+"D:\###WORK###\STM8\+++\lcd\src\stm8_interrupt_vector.c",16  Error[Pe253]: 
+          expected a ","
+     17            
+     18            {0x82, (interrupt_handler_t)TRAP_IRQHandler},			/* TRAP - Software interrupt */
+                                               ^
+Error[Pe253]: expected a ","
+     19            
+     20            {0x82, (interrupt_handler_t)NonHandledInterrupt},		/* Reserved */
+                                               ^
+Error[Pe253]: expected a ","
+     21          	 		
+     22            {0x82, (interrupt_handler_t)FLASH_IRQHandler},			/* irq1 - FLASH interrupt */
+                                               ^
+Error[Pe253]: expected a ","
+     23          
+     24            {0x82, (interrupt_handler_t)DMA1_CHANNEL0_1_IRQHandler},			/* irq2 - DMA1 channel0 and channel1 interrupt */
+                                               ^
+Error[Pe253]: expected a ","
+     25          	
+     26            {0x82, (interrupt_handler_t)DMA1_CHANNEL2_3_IRQHandler},			/* irq3 - DMA1 channel2 and channel3 interrupt */
+                                               ^
+Error[Pe253]: expected a ","
+     27          
+     28            {0x82, (interrupt_handler_t)RTC_IRQHandler},			/* irq4 - RTC interrupt */
+                                               ^
+Error[Pe253]: expected a ","
+     29          
+     30            {0x82, (interrupt_handler_t)EXTIE_F_PVD_IRQHandler},      /* irq5 - External IT PORTE/F interrupt /PVD interrupt */
+                                               ^
+Error[Pe253]: expected a ","
+     31          
+     32            {0x82, (interrupt_handler_t)EXTIB_IRQHandler},      /* irq6 - External IT PORTB interrupt */
+                                               ^
+Error[Pe253]: expected a ","
+     33          
+     34            {0x82, (interrupt_handler_t)EXTID_IRQHandler},			/* irq7 - External IT PORTD interrupt */
+                                               ^
+Error[Pe253]: expected a ","
+     35          
+     36            {0x82, (interrupt_handler_t)EXTI0_IRQHandler},			/* irq8 - External IT PIN0 interrupt */
+                                               ^
+Error[Pe253]: expected a ","
+     37          
+     38            {0x82, (interrupt_handler_t)EXTI1_IRQHandler},			/* irq9 - External IT PIN1 interrupt */
+                                               ^
+Error[Pe253]: expected a ","
+     39          
+     40            {0x82, (interrupt_handler_t)EXTI2_IRQHandler},			/* irq10 - External IT PIN2 interrupt */
+                                               ^
+Error[Pe253]: expected a ","
+     41          
+     42            {0x82, (interrupt_handler_t)EXTI3_IRQHandler},		  /* irq11 - External IT PIN3 interrupt */
+                                               ^
+Error[Pe253]: expected a ","
+     43          
+     44            {0x82, (interrupt_handler_t)EXTI4_IRQHandler},      /* irq12 - External IT PIN4 interrupt */
+                                               ^
+Error[Pe253]: expected a ","
+     45          
+     46            {0x82, (interrupt_handler_t)EXTI5_IRQHandler},      /* irq13 - External IT PIN5 interrupt */
+                                               ^
+Error[Pe253]: expected a ","
+     47          
+     48            {0x82, (interrupt_handler_t)EXTI6_IRQHandler},      /* irq14 - External IT PIN6 interrupt */
+                                               ^
+Error[Pe253]: expected a ","
+     49          
+     50            {0x82, (interrupt_handler_t)EXTI7_IRQHandler},      /* irq15 - External IT PIN7 interrupt */
+                                               ^
+Error[Pe253]: expected a ","
+     51          
+     52            {0x82, (interrupt_handler_t)LCD_IRQHandler},      /* irq16 - LCD interrupt */
+                                               ^
+Error[Pe253]: expected a ","
+     53          
+     54            {0x82, (interrupt_handler_t)SWITCH_CSS_BREAK_DAC_IRQHandler},      /* irq17 - CLK switch/CSS interrupt/ TIM1 Break interrupt / DAC */
+                                               ^
+Error[Pe253]: expected a ","
+     55          
+     56            {0x82, (interrupt_handler_t)ADC1_COMP_IRQHandler},      /* irq18 - ADC1 and Comparator interrupt */
+                                               ^
+Error[Pe253]: expected a ","
+     57          
+     58            {0x82, (interrupt_handler_t)TIM2_UPD_OVF_TRG_BRK_IRQHandler},      /* irq19 - TIM2 Update/Overflow/Trigger/Break interrupt */
+                                               ^
+Error[Pe253]: expected a ","
+     59          
+     60            {0x82, (interrupt_handler_t)TIM2_CAP_IRQHandler},      /* irq20 - TIM2 Capture/Compare interrupt */
+                                               ^
+Error[Pe253]: expected a ","
+     61          
+     62            {0x82, (interrupt_handler_t)TIM3_UPD_OVF_TRG_BRK_IRQHandler},      /* irq21 - TIM3 Update/Overflow/Trigger/Break interrupt */
+                                               ^
+Error[Pe253]: expected a ","
+     63          
+     64            {0x82, (interrupt_handler_t)TIM3_CAP_IRQHandler},			/* irq22 - TIM3 Capture/Compare interrupt */
+                                               ^
+Error[Pe253]: expected a ","
+     65          
+     66            {0x82, (interrupt_handler_t)TIM1_UPD_OVF_TRG_COM_IRQHandler},      /* irq23 - TIM1 Update/Overflow/Trigger/Commutation interrupt */
+                                               ^
+Error[Pe253]: expected a ","
+     67          
+     68            {0x82, (interrupt_handler_t)TIM1_CAP_IRQHandler},      /* irq24 - TIM1 Capture/Compare interrupt */
+                                               ^
+Error[Pe253]: expected a ","
+     69          
+     70            {0x82, (interrupt_handler_t)TIM4_UPD_OVF_TRG_IRQHandler},      /* irq25 - TIM4 Update/Overflow/Trigger interrupt */
+                                               ^
+Error[Pe253]: expected a ","
+     71          
+     72            {0x82, (interrupt_handler_t)SPI1_IRQHandler},      /* irq26 - SPI1 interrupt */
+                                               ^
+Error[Pe253]: expected a ","
+     73          
+     74            {0x82, (interrupt_handler_t)USART1_TX_IRQHandler},      /* irq27 - USART1 TX interrupt */
+                                               ^
+Error[Pe253]: expected a ","
+     75          
+     76            {0x82, (interrupt_handler_t)USART1_RX_IRQHandler},      /* irq28 - USART1 RX interrupt */
+                                               ^
+Error[Pe253]: expected a ","
+     77          
+     78            {0x82, (interrupt_handler_t)I2C1_IRQHandler},      /* irq29 - I2C1 interrupt */
+                                               ^
+Error[Pe253]: expected a ","
+     79          
+     80          };
+
+Errors: 35
+Warnings: 1

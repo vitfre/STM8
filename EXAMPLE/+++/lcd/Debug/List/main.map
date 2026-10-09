@@ -1,0 +1,337 @@
+###############################################################################
+#
+# IAR ELF Linker V2.10.3.153 for STM8                     06/Apr/2015  19:44:18
+# Copyright 2010-2015 IAR Systems AB.
+#
+#    Output file  =  D:\###WORK###\STM8\+++\lcd\Debug\Exe\main.out
+#    Map file     =  D:\###WORK###\STM8\+++\lcd\Debug\List\main.map
+#    Command line =  
+#        D:\###WORK###\STM8\+++\lcd\Debug\Obj\LCD.o
+#        D:\###WORK###\STM8\+++\lcd\Debug\Obj\main.o --redirect
+#        _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb -o
+#        D:\###WORK###\STM8\+++\lcd\Debug\Exe\main.out --map
+#        D:\###WORK###\STM8\+++\lcd\Debug\List\main.map --config "C:\Program
+#        Files (x86)\IAR Systems\Embedded Workbench
+#        7.0\stm8\config\lnkstm8l152c6.icf" --config_def _CSTACK_SIZE=0x100
+#        --config_def _HEAP_SIZE=0x100 --entry __iar_program_start --debug_lib
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+__SystemLibrary            = DLib
+__code_model               = small
+__core                     = stm8
+__data_model               = medium
+__dlib_file_descriptor     = 0
+__dlib_full_locale_support = 0
+__rt_version               = 4
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A1":  place at start of [0x000000-0x0000ff] { rw section .vregs };
+"A2":  place at end of [0x000000-0x0007ff] { block CSTACK };
+"P2":  place in [from 0x000000 to 0x0007ff] {
+          block HEAP, rw section __DLIB_PERTHREAD, rw section .far.bss,
+          rw section .far.data, rw section .far.noinit,
+          rw section .far_func.textrw, rw section .huge.bss,
+          rw section .huge.data, rw section .huge.noinit,
+          rw section .huge_func.textrw, rw section .iar.dynexit,
+          rw section .near.bss, rw section .near.data, rw section .near.noinit,
+          rw section .near_func.textrw };
+"A3":  place at start of [0x008000-0x00ffff] { block INTVEC };
+"P3":  place in [from 0x008000 to 0x00ffff] {
+          ro section __DLIB_PERTHREAD_init, ro section .far.data_init,
+          ro section .far_func.textrw_init, ro section .huge.data_init,
+          ro section .huge_func.textrw_init, ro section .iar.init_table,
+          ro section .init_array, ro section .near.data_init,
+          ro section .near.rodata, ro section .near_func.text,
+          ro section .near_func.textrw_init, ro section .tiny.data_init,
+          ro section .tiny.rodata_init };
+
+  Section          Kind      Address   Size  Object
+  -------          ----      -------   ----  ------
+"A1":                                   0xc
+  .vregs           uninit   0x000000    0xc  vregs.o [4]
+                          - 0x00000c    0xc
+
+"P2":                                   0x4
+  .near.bss        zero     0x00000c    0x4  main.o [1]
+                          - 0x000010    0x4
+
+"A2":                                 0x100
+  CSTACK                    0x000700  0x100  <Block>
+    CSTACK         uninit   0x000700  0x100  <Block tail>
+                          - 0x000800  0x100
+
+Absolute sections, part 1 of 5:         0x2
+  .near.noinit     uninit   0x0050c0    0x1  main.o [1]
+  .near.noinit     uninit   0x0050c1    0x1  LCD.o [1]
+                          - 0x0050c2    0x2
+
+Absolute sections, part 2 of 5:         0x1
+  .near.noinit     uninit   0x0050c4    0x1  LCD.o [1]
+                          - 0x0050c5    0x1
+
+Absolute sections, part 3 of 5:         0x1
+  .near.noinit     uninit   0x0050c6    0x1  LCD.o [1]
+                          - 0x0050c7    0x1
+
+Absolute sections, part 4 of 5:         0x7
+  .near.noinit     uninit   0x005400    0x1  LCD.o [1]
+  .near.noinit     uninit   0x005401    0x1  LCD.o [1]
+  .near.noinit     uninit   0x005402    0x1  LCD.o [1]
+  .near.noinit     uninit   0x005403    0x1  LCD.o [1]
+  .near.noinit     uninit   0x005404    0x1  LCD.o [1]
+  .near.noinit     uninit   0x005405    0x1  LCD.o [1]
+  .near.noinit     uninit   0x005406    0x1  LCD.o [1]
+                          - 0x005407    0x7
+
+Absolute sections, part 5 of 5:         0xe
+  .near.noinit     uninit   0x00540c    0x1  LCD.o [1]
+  .near.noinit     uninit   0x00540d    0x1  LCD.o [1]
+  .near.noinit     uninit   0x00540e    0x1  LCD.o [1]
+  .near.noinit     uninit   0x00540f    0x1  LCD.o [1]
+  .near.noinit     uninit   0x005410    0x1  LCD.o [1]
+  .near.noinit     uninit   0x005411    0x1  LCD.o [1]
+  .near.noinit     uninit   0x005412    0x1  LCD.o [1]
+  .near.noinit     uninit   0x005413    0x1  LCD.o [1]
+  .near.noinit     uninit   0x005414    0x1  LCD.o [1]
+  .near.noinit     uninit   0x005415    0x1  LCD.o [1]
+  .near.noinit     uninit   0x005416    0x1  LCD.o [1]
+  .near.noinit     uninit   0x005417    0x1  LCD.o [1]
+  .near.noinit     uninit   0x005418    0x1  LCD.o [1]
+  .near.noinit     uninit   0x005419    0x1  LCD.o [1]
+                          - 0x00541a    0xe
+
+"A3":                                  0x80
+  INTVEC                    0x008000   0x80  <Block>
+    .intvec        const    0x008000   0x80  interrupt.o [4]
+                          - 0x008080   0x80
+
+"P3":                                 0x6ce
+  .near_func.text  ro code  0x008080  0x2c6  LCD.o [1]
+  .near_func.text  ro code  0x008346   0xa2  LCD.o [1]
+  .near_func.text  ro code  0x0083e8   0x5d  LCD.o [1]
+  .near_func.text  ro code  0x008445   0x4e  main.o [1]
+  .near.rodata     const    0x008493   0x40  LCD.o [1]
+  .near_func.text  ro code  0x0084d3   0x3a  LCD.o [1]
+  .near.rodata     const    0x00850d   0x34  LCD.o [1]
+  .near_func.text  ro code  0x008541   0x2b  vreg_util.o [4]
+  .iar.init_table  const    0x00856c    0x8  - Linker created -
+  .near_func.text  ro code  0x008574   0x1e  init_small.o [4]
+  .near_func.text  ro code  0x008592   0x1a  long_util.o [4]
+  .near_func.text  ro code  0x0085ac   0x17  init.o [4]
+  .near.rodata     const    0x0085c3   0x14  LCD.o [1]
+  .near_func.text  ro code  0x0085d7   0x14  __dbg_xxexit.o [3]
+  .near_func.text  ro code  0x0085eb   0x13  cstartup.o [4]
+  .near_func.text  ro code  0x0085fe   0x13  long.o [4]
+  .near_func.text  ro code  0x008611   0x12  main.o [1]
+  .near_func.text  ro code  0x008623    0xc  char.o [4]
+  .near_func.text  ro code  0x00862f    0xb  main.o [1]
+  .near_func.text  ro code  0x00863a    0xa  LCD.o [1]
+  .near_func.text  ro code  0x008644    0xa  LCD.o [1]
+  .near_func.text  ro code  0x00864e    0xa  LCD.o [1]
+  .near_func.text  ro code  0x008658    0xa  LCD.o [1]
+  .near_func.text  ro code  0x008662    0xa  LCD.o [1]
+  .near_func.text  ro code  0x00866c    0xa  LCD.o [1]
+  .near_func.text  ro code  0x008676    0xa  LCD.o [1]
+  .near_func.text  ro code  0x008680    0xa  LCD.o [1]
+  .near_func.text  ro code  0x00868a    0xa  LCD.o [1]
+  .near_func.text  ro code  0x008694    0xa  LCD.o [1]
+  .near_func.text  ro code  0x00869e    0xa  LCD.o [1]
+  .near_func.text  ro code  0x0086a8    0xa  LCD.o [1]
+  .near_func.text  ro code  0x0086b2    0xa  LCD.o [1]
+  .near_func.text  ro code  0x0086bc    0xa  LCD.o [1]
+  .near_func.text  ro code  0x0086c6    0xa  LCD.o [1]
+  .near_func.text  ro code  0x0086d0    0xa  LCD.o [1]
+  .near_func.text  ro code  0x0086da    0xa  LCD.o [1]
+  .near_func.text  ro code  0x0086e4    0xa  LCD.o [1]
+  .near.rodata     const    0x0086ee    0x9  main.o [1]
+  .near_func.text  ro code  0x0086f7    0x9  LCD.o [1]
+  .near_func.text  ro code  0x008700    0x8  LCD.o [1]
+  .near_func.text  ro code  0x008708    0x8  LCD.o [1]
+  .near.rodata     const    0x008710    0x7  main.o [1]
+  .near_func.text  ro code  0x008717    0x7  LCD.o [1]
+  .near_func.text  ro code  0x00871e    0x7  main.o [1]
+  .near.rodata     const    0x008725    0x6  main.o [1]
+  .near_func.text  ro code  0x00872b    0x6  LCD.o [1]
+  .near_func.text  ro code  0x008731    0x6  LCD.o [1]
+  .near_func.text  ro code  0x008737    0x5  LCD.o [1]
+  .near_func.text  ro code  0x00873c    0x5  cexit.o [4]
+  .near_func.text  ro code  0x008741    0x3  interrupt.o [4]
+  .near_func.text  ro code  0x008744    0x3  low_level_init.o [4]
+  .near_func.text  ro code  0x008747    0x3  exit.o [4]
+  .near_func.text  ro code  0x00874a    0x3  unhandled_exception.o [4]
+  .near_func.text  ro code  0x00874d    0x1  __dbg_break.o [3]
+                          - 0x00874e  0x6ce
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address   Size
+          -------   ----
+Zero (__iar_zero_init2)
+    1 destination range, total size 0x4:
+          0x00000c   0x4
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                 ro code  ro data  rw data  rw data
+                                                       (abs)
+    ------                 -------  -------  -------  -------
+D:\###WORK###\STM8\+++\lcd\Debug\Obj: [1]
+    LCD.o                    1 252      136                24
+    main.o                     114       22        4        1
+    ---------------------------------------------------------
+    Total:                   1 366      158        4       25
+
+command line: [2]
+    ---------------------------------------------------------
+    Total:
+
+dbgstm8smd.a: [3]
+    __dbg_break.o                1
+    __dbg_xxexit.o              20
+    ---------------------------------------------------------
+    Total:                      21
+
+dlstm8smn.a: [4]
+    cexit.o                      5
+    char.o                      12
+    cstartup.o                  19
+    exit.o                       3
+    init.o                      23
+    init_small.o                30
+    interrupt.o                  3      128
+    long.o                      19
+    long_util.o                 26
+    low_level_init.o             3
+    unhandled_exception.o        3
+    vreg_util.o                 43
+    vregs.o                                       12
+    ---------------------------------------------------------
+    Total:                     189      128       12
+
+    Linker created                        8      256
+-------------------------------------------------------------
+    Grand Total:             1 576      294      272       25
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                  Address   Size  Type      Object
+-----                  -------   ----  ----      ------
+?b0                   0x000000         Data  Gb  vregs.o [4]
+?b1                   0x000001         Data  Gb  vregs.o [4]
+?b10                  0x00000a         Data  Gb  vregs.o [4]
+?b11                  0x00000b         Data  Gb  vregs.o [4]
+?b2                   0x000002         Data  Gb  vregs.o [4]
+?b3                   0x000003         Data  Gb  vregs.o [4]
+?b4                   0x000004         Data  Gb  vregs.o [4]
+?b5                   0x000005         Data  Gb  vregs.o [4]
+?b6                   0x000006         Data  Gb  vregs.o [4]
+?b7                   0x000007         Data  Gb  vregs.o [4]
+?b8                   0x000008         Data  Gb  vregs.o [4]
+?b9                   0x000009         Data  Gb  vregs.o [4]
+?e0                   0x000001         Data  Gb  vregs.o [4]
+?e1                   0x000005         Data  Gb  vregs.o [4]
+?e2                   0x000009         Data  Gb  vregs.o [4]
+?epilogue_w4          0x008568         Code  Gb  vreg_util.o [4]
+?inc32_0x_0x          0x008603         Code  Gb  long.o [4]
+?inc32_l0_l0          0x0085fe         Code  Gb  long.o [4]
+?l0                   0x000000         Data  Gb  vregs.o [4]
+?l1                   0x000004         Data  Gb  vregs.o [4]
+?l2                   0x000008         Data  Gb  vregs.o [4]
+?load32_0x_l0         0x00859e         Code  Gb  long_util.o [4]
+?load32_l0_0x         0x008592         Code  Gb  long_util.o [4]
+?pop_w4               0x008559         Code  Gb  vreg_util.o [4]
+?push_w4              0x008541         Code  Gb  vreg_util.o [4]
+?sll8_a_a_5           0x008624         Code  Gb  char.o [4]
+?sll8_a_a_6           0x008623         Code  Gb  char.o [4]
+?srl8_a_a_5           0x00862a         Code  Gb  char.o [4]
+?srl8_a_a_6           0x008629         Code  Gb  char.o [4]
+?w0                   0x000000         Data  Gb  vregs.o [4]
+?w1                   0x000002         Data  Gb  vregs.o [4]
+?w2                   0x000004         Data  Gb  vregs.o [4]
+?w3                   0x000006         Data  Gb  vregs.o [4]
+?w4                   0x000008         Data  Gb  vregs.o [4]
+?w5                   0x00000a         Data  Gb  vregs.o [4]
+CSTACK$$Base          0x000700          --   Gb  - Linker created -
+CSTACK$$Limit         0x000800          --   Gb  - Linker created -
+INTVEC$$Base          0x008000          --   Gb  - Linker created -
+INTVEC$$Limit         0x008080          --   Gb  - Linker created -
+LCD_Char_Find         0x008346   0xa2  Code  Lc  LCD.o [1]
+LCD_Contrast          0x00863a    0xa  Code  Gb  LCD.o [1]
+LCD_Init              0x0084d3   0x3a  Code  Gb  LCD.o [1]
+LCD_Write_Char        0x008080  0x2c6  Code  Gb  LCD.o [1]
+LCD_Write_String      0x0083e8   0x5d  Code  Gb  LCD.o [1]
+Region$$Table$$Base   0x00856c          --   Gb  - Linker created -
+Region$$Table$$Limit  0x008574          --   Gb  - Linker created -
+_A_CLK_CKDIVR         0x0050c0    0x1  Data  Gb  main.o [1]
+_A_CLK_CRTCR          0x0050c1    0x1  Data  Gb  LCD.o [1]
+_A_CLK_ECKR           0x0050c6    0x1  Data  Gb  LCD.o [1]
+_A_CLK_PCKENR2        0x0050c4    0x1  Data  Gb  LCD.o [1]
+_A_LCD_CR1            0x005400    0x1  Data  Gb  LCD.o [1]
+_A_LCD_CR2            0x005401    0x1  Data  Gb  LCD.o [1]
+_A_LCD_CR3            0x005402    0x1  Data  Gb  LCD.o [1]
+_A_LCD_FRQ            0x005403    0x1  Data  Gb  LCD.o [1]
+_A_LCD_PM0            0x005404    0x1  Data  Gb  LCD.o [1]
+_A_LCD_PM1            0x005405    0x1  Data  Gb  LCD.o [1]
+_A_LCD_PM2            0x005406    0x1  Data  Gb  LCD.o [1]
+_A_LCD_RAM0           0x00540c    0x1  Data  Gb  LCD.o [1]
+_A_LCD_RAM1           0x00540d    0x1  Data  Gb  LCD.o [1]
+_A_LCD_RAM10          0x005416    0x1  Data  Gb  LCD.o [1]
+_A_LCD_RAM11          0x005417    0x1  Data  Gb  LCD.o [1]
+_A_LCD_RAM12          0x005418    0x1  Data  Gb  LCD.o [1]
+_A_LCD_RAM13          0x005419    0x1  Data  Gb  LCD.o [1]
+_A_LCD_RAM2           0x00540e    0x1  Data  Gb  LCD.o [1]
+_A_LCD_RAM3           0x00540f    0x1  Data  Gb  LCD.o [1]
+_A_LCD_RAM4           0x005410    0x1  Data  Gb  LCD.o [1]
+_A_LCD_RAM5           0x005411    0x1  Data  Gb  LCD.o [1]
+_A_LCD_RAM6           0x005412    0x1  Data  Gb  LCD.o [1]
+_A_LCD_RAM7           0x005413    0x1  Data  Gb  LCD.o [1]
+_A_LCD_RAM8           0x005414    0x1  Data  Gb  LCD.o [1]
+_A_LCD_RAM9           0x005415    0x1  Data  Gb  LCD.o [1]
+__DebugBreak          0x00874d    0x1  Code  Gb  __dbg_break.o [3]
+__exit                0x0085d7   0x14  Code  Gb  __dbg_xxexit.o [3]
+__iar_data_init2      0x0085ac   0x17  Code  Gb  init.o [4]
+__iar_program_start   0x0085eb         Code  Gb  cstartup.o [4]
+__iar_unhandled_exception
+                      0x00874a         Code  Gb  unhandled_exception.o [4]
+__iar_zero_init2      0x008574         Code  Gb  init_small.o [4]
+__intvec              0x008000         Data  Gb  interrupt.o [4]
+__low_level_init      0x008744    0x3  Code  Gb  low_level_init.o [4]
+_exit                 0x00873c         Code  Gb  cexit.o [4]
+char_mask             0x00850d   0x34  Data  Gb  LCD.o [1]
+exit                  0x008747    0x3  Code  Gb  exit.o [4]
+i                     0x00000c    0x4  Data  Gb  main.o [1]
+main                  0x008445   0x4e  Code  Gb  main.o [1]
+number_mask           0x0085c3   0x14  Data  Gb  LCD.o [1]
+rus_char_mask         0x008493   0x40  Data  Gb  LCD.o [1]
+
+
+[1] = D:\###WORK###\STM8\+++\lcd\Debug\Obj
+[2] = command line
+[3] = dbgstm8smd.a
+[4] = dlstm8smn.a
+
+  1 576 bytes of readonly  code memory
+    294 bytes of readonly  data memory
+    272 bytes of readwrite data memory (+ 25 absolute)
+
+Errors: none
+Warnings: none

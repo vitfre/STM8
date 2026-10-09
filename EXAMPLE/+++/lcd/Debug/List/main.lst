@@ -1,0 +1,165 @@
+###############################################################################
+#
+# IAR C/C++ Compiler V2.10.3.153 for STM8                 06/Apr/2015  19:44:18
+# Copyright 2010-2015 IAR Systems AB.
+#
+#    Source file  =  D:\###WORK###\STM8\+++\lcd\main.c
+#    Command line =  
+#        D:\###WORK###\STM8\+++\lcd\main.c -e --enable_multibytes -Oh --debug
+#        --code_model small --data_model medium -o
+#        D:\###WORK###\STM8\+++\lcd\Debug\Obj\ --dlib_config "C:\Program Files
+#        (x86)\IAR Systems\Embedded Workbench 7.0\stm8\LIB\dlstm8smn.h" -lC
+#        D:\###WORK###\STM8\+++\lcd\Debug\List\ -I
+#        D:\###WORK###\STM8\+++\lcd\inc\ -I D:\###WORK###\STM8\+++\lcd\src\
+#        --vregs 16 --relaxed_fp
+#    List file    =  D:\###WORK###\STM8\+++\lcd\Debug\List\main.lst
+#    Object file  =  D:\###WORK###\STM8\+++\lcd\Debug\Obj\main.o
+#
+###############################################################################
+
+D:\###WORK###\STM8\+++\lcd\main.c
+      1          
+      2          #include "iostm8l152c6.h"
+
+   \                                 In section .near.noinit, at 0x50c0
+   \   union <unnamed> volatile _A_CLK_CKDIVR
+   \                     _A_CLK_CKDIVR:
+   \   000000              DS8 1
+      3          #include "LCD.h"
+      4          
+
+   \                                 In section .near.bss, align 1
+      5          unsigned long i;
+   \                     i:
+   \   000000              DS8 4
+
+   \                                 In section .near_func.text, align 1
+      6          int main( void )
+      7          {
+      8           CLK_CKDIVR_bit.CKM=0;
+   \                     main:
+   \   000000 C6 50C0      LD        A, L:0x50c0
+   \   000003 A4 F8        AND       A, #0xf8
+   \   000005 C7 50C0      LD        L:0x50c0, A
+      9           LCD_Init();
+   \   000008 CD ....      CALL      L:LCD_Init
+     10           LCD_Contrast(5);
+   \   00000B A6 05        LD        A, #0x5
+   \   00000D CD ....      CALL      L:LCD_Contrast
+     11           
+     12          
+     13           LCD_Write_String("TEST ");
+   \   000010 AE ....      LDW       X, #?_0
+   \   000013 CD ....      CALL      L:?Subroutine1
+     14           for(i=0; i<200000; i++){asm("nop");};
+   \                     ??CrossCallReturnLabel_2:
+   \   000016 9D           nop
+   \   000017 CD ....      CALL      L:?Subroutine2
+   \                     ??CrossCallReturnLabel_5:
+   \   00001A A3 0003      CPW       X, #0x3
+   \   00001D 26 05        JRNE      L:??main_0
+   \   00001F BE ..        LDW       X, S:?w1
+   \   000021 A3 0D40      CPW       X, #0xd40
+   \                     ??main_0:
+   \   000024 25 F0        JRC       L:??CrossCallReturnLabel_2
+     15          
+     16           while(1)
+     17           {
+     18            LCD_Write_String("17:32:59");
+   \                     ??main_1:
+   \   000026 AE ....      LDW       X, #?_1
+   \   000029 CD ....      CALL      L:?Subroutine1
+     19            for(i=0; i<100000; i++){asm("nop");};
+   \                     ??CrossCallReturnLabel_3:
+   \   00002C 9D           nop
+   \   00002D CD ....      CALL      L:?Subroutine0
+   \                     ??CrossCallReturnLabel_0:
+   \   000030 26 05        JRNE      L:??main_2
+   \   000032 BE ..        LDW       X, S:?w1
+   \   000034 A3 86A0      CPW       X, #0x86a0
+   \                     ??main_2:
+   \   000037 25 F3        JRC       L:??CrossCallReturnLabel_3
+     20            LCD_Write_String("173259");
+   \   000039 AE ....      LDW       X, #?_2
+   \   00003C CD ....      CALL      L:?Subroutine1
+     21            for(i=0; i<100000; i++){asm("nop");};
+   \                     ??CrossCallReturnLabel_4:
+   \   00003F 9D           nop
+   \   000040 CD ....      CALL      L:?Subroutine0
+     22           }; 
+   \                     ??CrossCallReturnLabel_1:
+   \   000043 26 05        JRNE      L:??main_3
+   \   000045 BE ..        LDW       X, S:?w1
+   \   000047 A3 86A0      CPW       X, #0x86a0
+   \                     ??main_3:
+   \   00004A 24 DA        JRNC      L:??main_1
+   \   00004C 20 F1        JRA       L:??CrossCallReturnLabel_4
+   \   00004E              REQUIRE _A_CLK_CKDIVR
+     23          }
+
+   \                                 In section .near_func.text, align 1
+   \                     ?Subroutine1:
+   \   000000 CD ....      CALL      L:LCD_Write_String
+   \   000003 5F           CLRW      X
+   \   000004 CF ....      LDW       L:i, X
+   \   000007 CF ....      LDW       L:i + 2, X
+   \   00000A 81           RET
+
+   \                                 In section .near_func.text, align 1
+   \                     ?Subroutine0:
+   \   000000 CD ....      CALL      L:?Subroutine2
+   \                     ??CrossCallReturnLabel_6:
+   \   000003 A3 0001      CPW       X, #0x1
+   \   000006 81           RET
+
+   \                                 In section .near_func.text, align 1
+   \                     ?Subroutine2:
+   \   000000 AE ....      LDW       X, #i
+   \   000003 CD ....      CALL      L:?load32_l0_0x
+   \   000006 CD ....      CALL      L:?inc32_l0_l0
+   \   000009 AE ....      LDW       X, #i
+   \   00000C CD ....      CALL      L:?load32_0x_l0
+   \   00000F BE ..        LDW       X, S:?w0
+   \   000011 81           RET
+
+   \                                 In section .near.rodata, align 1
+   \                     ?_0:
+   \   000000 54 45 53 54  DC8 "TEST "
+   \          20 00       
+
+   \                                 In section .near.rodata, align 1
+   \                     ?_1:
+   \   000000 31 37 3A 33  DC8 "17:32:59"
+   \          32 3A 35 39 
+
+   \                                 In section .near.rodata, align 1
+   \                     ?_2:
+   \   000000 31 37 33 32  DC8 "173259"
+   \          35 39 00    
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       7  ?Subroutine0
+      11  ?Subroutine1
+      18  ?Subroutine2
+       6  ?_0
+       9  ?_1
+       7  ?_2
+       1  _A_CLK_CKDIVR
+       4  i
+      78  main
+
+ 
+   4 bytes in section .near.bss
+   1 byte  in section .near.noinit    (abs)
+  22 bytes in section .near.rodata
+ 114 bytes in section .near_func.text
+ 
+ 114 bytes of CODE  memory
+  22 bytes of CONST memory
+   4 bytes of DATA  memory (+ 1 byte shared)
+
+Errors: none
+Warnings: none
