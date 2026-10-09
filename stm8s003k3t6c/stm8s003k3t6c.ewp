@@ -147,7 +147,7 @@
         </option>
         <option>
           <name>IccOptLevel</name>
-          <state>1</state>
+          <state>0</state>
         </option>
         <option>
           <name>IccOptStrategy</name>
@@ -156,7 +156,7 @@
         </option>
         <option>
           <name>IccOptLevelSlave</name>
-          <state>1</state>
+          <state>0</state>
         </option>
         <option>
           <name>IccOptAllowList</name>
@@ -189,7 +189,7 @@
         </option>
         <option>
           <name>CCDefines</name>
-          <state></state>
+          <state>STM8S003</state>
         </option>
         <option>
           <name>CCPreprocFile</name>

@@ -1,12 +1,5 @@
 #include "stm8s.h"
-#include "stm8s_clk.h"
-#include "stm8s_gpio.h"
-#include "stm8s_exti.h"
-#include "stm8s_itc.h"
-#include "stm8s_uart1.h"
-#include "stm8s_tim2.h"
-#include "stm8s_flash.h"
-#include "stm8s_adc1.h"
+
 #include "delay.h"
 #include "Init.h"
 
